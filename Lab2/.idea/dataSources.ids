@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - @localhost" uuid="c9508363-4c65-4ba0-9d13-c593992a6c7d">
+    <database-info product="MySQL" version="5.7.15-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="bookdb"/>
+    <table name="author" schema="" catalog="bookdb" type="TABLE">
+      <column name="AuthorID" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="Name" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Age" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="Country" sqlType="VARCHAR" precision="70" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="AuthorID"/>
+      <exported-key name="AuthorID" table="book" schema="" catalog="bookdb" columns="AuthorID"/>
+      <index name="ISBN_UNIQUE" unique="true" columns="AuthorID"/>
+    </table>
+    <table name="book" schema="" catalog="bookdb" type="TABLE">
+      <column name="ISBN" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Title" sqlType="VARCHAR" precision="90" scale="0" nullable="true" jdbcType="12"/>
+      <column name="AuthorID" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="Publisher" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="PublishDate" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Price" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="ISBN"/>
+      <foreign-key name="AuthorID" columns="AuthorID" ref-table="author" ref-schema="" ref-catalog="bookdb" ref-columns="AuthorID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="ISBN_UNIQUE" unique="true" columns="ISBN"/>
+      <index name="AuthorID_idx" unique="false" columns="AuthorID"/>
+    </table>
+  </data-source>
+</component>

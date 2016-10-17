@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+        <package name="default" extends="struts-default">
+                <action name="search" class="xiangxi.action.Search">
+                        <result name="success">/WEB-INF/searchResults.jsp</result>
+                </action>
+                <action name="detailedInfo" class="xiangxi.action.DetailedInfo">
+                        <result name="success">
+                                /WEB-INF/detailedInfo.jsp
+                        </result>
+                </action>
+                <action name="DeleteBook" class="xiangxi.action.DeleteBook">
+                        <result name="success">
+                                /WEB-INF/seccessfulDeletion.jsp
+                        </result>
+                </action>
+        </package>
+</struts>
